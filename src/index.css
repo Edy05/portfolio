@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Importamos las fuentes de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;500;600&display=swap');
+
+/* Estilos globales */
+body {
+  @apply bg-terminal-bg text-terminal-text font-sans;
+  scroll-behavior: smooth; /* Esto hace que al hacer clic en el navbar, baje suavemente */
+}
+
+/* Scrollbar personalizada estilo terminal */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-terminal-bg;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-terminal-border rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-terminal-green;
+}
+
+/* Efecto de cursor parpadeante estilo terminal */
+.cursor-blink::after {
+  content: '_';
+  animation: blink 1s step-end infinite;
+  @apply text-terminal-green;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
