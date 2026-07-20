@@ -4,7 +4,7 @@ import FadeIn from './FadeIn';
 export default function Projects() {
   const projects = [
     {
-      title: 'Dulce Esquina - E-commerce de Chucherías',
+      title: 'Dulce Esquina - E-commerce',
       image: '/dulce-esquina.png',
       description: 'Tienda online con carrito persistente usando Context API y navegación SPA con React Router.',
       tech: ['React', 'Vite', 'Tailwind CSS', 'React Router', 'Context API'],
@@ -18,8 +18,17 @@ export default function Projects() {
       description: 'CRUD completo para gestión de pacientes veterinarios con validaciones y persistencia de datos.',
       tech: ['React', 'Vite', 'Tailwind CSS', 'JavaScript ES6+'],
       github: 'https://github.com/Edy05/citas-veterinaria',
-      demo: 'https://citas-veterinaria-raact.netlify.app',
+      demo: 'https://citas-veterinaria.pages.dev', // ✅ ¡Link actualizado a Cloudflare!
       highlight: '🏥 CRUD completo con validaciones',
+    },
+    {
+      title: 'Nails Meli - Sitio Web para Negocio Local',
+      image: '/nails-meli.png',
+      description: 'Sitio web estático optimizado para clientes en Cuba (sin necesidad de VPN). Incluye catálogo de servicios y sistema de reservas directo a WhatsApp.',
+      tech: ['HTML5', 'CSS3', 'JavaScript Vanilla', 'WhatsApp API'],
+      github: 'https://github.com/Edy05/Nails-Meli',
+      demo: 'https://nails-meli.pages.dev',
+      highlight: '🇨🇺 Optimizado para conectividad en Cuba',
     },
   ];
 
@@ -43,11 +52,11 @@ export default function Projects() {
           <span className="text-terminal-green">03.</span> Proyectos destacados
         </h2>
         <p className="text-terminal-muted mb-8 max-w-2xl text-sm">
-          Una selección de mis trabajos más recientes.
+          Una selección de mis trabajos más recientes, desde aplicaciones React completas hasta soluciones estáticas optimizadas.
         </p>
 
         <motion.div 
-          className="grid md:grid-cols-2 gap-5"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-5"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -57,16 +66,16 @@ export default function Projects() {
             <motion.div
               key={project.title}
               variants={itemVariants}
-              className="bg-terminal-card border border-terminal-border rounded-lg overflow-hidden hover:border-terminal-green transition-all duration-300 group"
+              className="bg-terminal-card border border-terminal-border rounded-lg overflow-hidden hover:border-terminal-green transition-all duration-300 group flex flex-col"
             >
-              {/* Barra superior estilo terminal - más compacta */}
+              {/* Barra superior estilo terminal */}
               <div className="flex items-center justify-between px-3 py-1.5 bg-terminal-bg border-b border-terminal-border">
                 <div className="flex items-center gap-1.5">
                   <div className="w-2.5 h-2.5 rounded-full bg-red-500"></div>
                   <div className="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
                   <div className="w-2.5 h-2.5 rounded-full bg-green-500"></div>
                   <span className="text-xs text-terminal-muted ml-2 font-mono">
-                    project_{index + 1}.jsx
+                    project_{index + 1}
                   </span>
                 </div>
                 <div className="flex gap-3">
@@ -91,7 +100,7 @@ export default function Projects() {
                 </div>
               </div>
 
-              {/* Imagen - más compacta */}
+              {/* Imagen */}
               <div className="relative overflow-hidden border-b border-terminal-border">
                 <img 
                   src={project.image} 
@@ -105,8 +114,8 @@ export default function Projects() {
                 />
               </div>
 
-              {/* Contenido - más compacto */}
-              <div className="p-4">
+              {/* Contenido */}
+              <div className="p-4 flex flex-col flex-grow">
                 <a 
                   href={project.demo}
                   target="_blank"
@@ -119,15 +128,15 @@ export default function Projects() {
                   </h3>
                 </a>
                 
-                <div className="inline-block px-2 py-0.5 bg-terminal-green/10 border border-terminal-green/30 rounded-full text-xs font-mono text-terminal-green mb-3">
+                <div className="inline-block px-2 py-0.5 bg-terminal-green/10 border border-terminal-green/30 rounded-full text-xs font-mono text-terminal-green mb-3 w-fit">
                   {project.highlight}
                 </div>
                 
-                <p className="text-terminal-text text-sm leading-relaxed mb-3">
+                <p className="text-terminal-text text-sm leading-relaxed mb-3 flex-grow">
                   {project.description}
                 </p>
                 
-                <div className="flex flex-wrap gap-1.5">
+                <div className="flex flex-wrap gap-1.5 mt-auto">
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
