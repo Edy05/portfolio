@@ -18,7 +18,7 @@ export default function Projects() {
       description: 'CRUD completo para gestión de pacientes veterinarios con validaciones y persistencia de datos.',
       tech: ['React', 'Vite', 'Tailwind CSS', 'JavaScript ES6+'],
       github: 'https://github.com/Edy05/citas-veterinaria',
-      demo: 'https://citas-veterinaria.pages.dev', // ✅ ¡Link actualizado a Cloudflare!
+      demo: 'https://citas-veterinaria.pages.dev',
       highlight: '🏥 CRUD completo con validaciones',
     },
     {
@@ -29,6 +29,15 @@ export default function Projects() {
       github: 'https://github.com/Edy05/Nails-Meli',
       demo: 'https://nails-meli.pages.dev',
       highlight: '🇨🇺 Optimizado para conectividad en Cuba',
+    },
+    {
+      title: 'EdyCry - Tracer de Criptomonedas',
+      image: '/edycry.png', // ¡Recuerda guardar una captura como edycry.png en la carpeta public!
+      description: 'Sistema de seguimiento en tiempo real que muestra la equivalencia de monedas fiat respecto a criptomonedas. Consumiendo una API externa para consultar y actualizar los valores del mercado al instante.',
+      tech: ['React', 'Vite', 'Tailwind CSS', 'API REST', 'JavaScript'],
+      github: 'https://github.com/Edy05/edycry',
+      demo: 'https://edycry.pages.dev',
+      highlight: '📈 Consumo de API en tiempo real',
     },
   ];
 
@@ -55,8 +64,9 @@ export default function Projects() {
           Una selección de mis trabajos más recientes, desde aplicaciones React completas hasta soluciones estáticas optimizadas.
         </p>
 
+        {/* Grid: 1 col en móvil, 2 en tablet y desktop (perfecto para 4 proyectos) */}
         <motion.div 
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-5"
+          className="grid md:grid-cols-2 gap-5"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
